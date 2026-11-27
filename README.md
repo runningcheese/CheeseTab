@@ -12,7 +12,7 @@
 
 
 
-## 功能
+## 1、功能
 
 ### 快捷方式
 
@@ -80,7 +80,7 @@ Favicon / Simple Icons / 自定义
 - 自定义壁纸、图标缓存等二进制数据保存在 IndexedDB
 - 远程请求仅用于壁纸、favicon、Simple Icons、Bing 与随机图片清单
 
-## 安装
+## 2、安装
 
 
 
@@ -120,9 +120,6 @@ js/                     ES Module 源码
 icons/                  本地快捷方式图标与扩展图标
 thumbs/                 壁纸分类缩略图
 _locales/               扩展商店多语言描述
-tools/build-web.mjs     静态网站构建脚本
-site/                   静态网站构建产物
-dist/                   Chrome / Firefox / Web 打包文件
 ```
 
 ### 图标来源说明
@@ -144,7 +141,7 @@ dist/                   Chrome / Firefox / Web 打包文件
 
 
 
-## 版本
+## 3、版本
 
 
 
