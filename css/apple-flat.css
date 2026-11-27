@@ -1,0 +1,508 @@
+/* ==========================================================================
+   Apple 扁平化样式（设置抽屉 / 菜单 / 浮层 / 对话框 / 提示）
+   —— 独立覆盖层，index.html 最后引入；不改动 Firefox 1:1 还原的基线样式，
+      需要回退时删掉这一行 <link> 即可。
+   设计要点：零投影、0.5px 发丝分隔线、半透明 vibrancy 面板、纯色填充按钮
+      （无渐变 / 无亮度滤镜 / 无描边）、字体沿用 Firefox 基线、颜色直接写 light-dark() 数值、柔和 spring 动效。
+   ========================================================================== */
+
+/* 弹层按主题指定 color-scheme，让下面的 light-dark() 取到对应数值 */
+.settings-drawer,
+.menu,
+.modal,
+.toast {
+  color-scheme: light;
+}
+html[data-theme="dark"] .settings-drawer,
+html[data-theme="dark"] .menu,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .toast {
+  color-scheme: dark;
+}
+
+/* 弹层只改文字色；字体族 / 字重 / 字号 / 字距全部沿用 Firefox 基线（r60 恢复） */
+.settings-drawer,
+.menu,
+.modal {
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.settings-drawer :focus-visible,
+.menu :focus-visible,
+.modal :focus-visible {
+  outline-color: light-dark(#007aff, #0a84ff);
+}
+
+/* ------------------------------ 设置抽屉 ------------------------------- */
+.settings-drawer {
+  background: light-dark(#ffffff, rgba(44, 44, 46, 0.94));
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-inline-start: 0.5px solid light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+  /* r58 恢复改前的左侧投影：右侧扩散超出视口不可见，视觉上只在抽屉左缘 */
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.22);
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+}
+html[data-theme="dark"] .settings-drawer {
+  background: light-dark(#ffffff, rgba(44, 44, 46, 0.94));
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+}
+.settings-drawer__head {
+  padding: 20px 20px 8px;
+}
+/* 圆形灰底关闭按钮（macOS 面板惯例） */
+.settings-drawer__head .icon-btn,
+.modal__head .icon-btn {
+  border-radius: 50%;
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.settings-drawer__head .icon-btn:hover,
+.modal__head .icon-btn:hover {
+  background: light-dark(rgba(120, 120, 128, 0.2), rgba(118, 118, 128, 0.36));
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+
+.settings,
+.modal__body {
+  scrollbar-width: thin;
+  scrollbar-color: light-dark(rgba(120, 120, 128, 0.2), rgba(118, 118, 128, 0.36)) transparent;
+}
+.settings {
+  padding: 0 20px 28px;
+}
+.settings__section {
+  padding: 20px 0;
+  border-block-start: 0.5px solid light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+}
+.settings__section:first-child {
+  border-block-start: 0;
+}
+/* r62：分区标题用主色、行标题用次要色（两者互换） */
+.settings__heading {
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.settings__row {
+  padding: 8px 0;
+}
+.settings__row-title {
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.wallpaper-list-title {
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.settings__note,
+.field__label,
+.wallpaper-category-btn__label {
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.wallpapers-reset {
+  color: light-dark(#007aff, #0a84ff);
+  text-decoration: none;
+}
+.wallpapers-reset:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+/* ---------------------------- 按钮 / 表单 ----------------------------- */
+.settings-drawer .btn,
+.modal .btn {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  min-height: 30px;
+  padding: 0 11px;
+  transition: background-color 0.15s linear, color 0.15s linear;
+}
+.btn--primary {
+  background: light-dark(#007aff, #0a84ff);
+  color: #fff;
+}
+.btn--primary:hover {
+  filter: none;
+  background: color-mix(in srgb, light-dark(#007aff, #0a84ff) 85%, #000);
+}
+.btn--ghost {
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.btn--ghost:hover {
+  background: light-dark(rgba(120, 120, 128, 0.2), rgba(118, 118, 128, 0.36));
+}
+.btn--quiet {
+  background: transparent;
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.btn--quiet:hover {
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.btn--danger {
+  background: color-mix(in srgb, light-dark(#ff3b30, #ff453a) 12%, transparent);
+  color: light-dark(#ff3b30, #ff453a);
+}
+.btn--danger:hover {
+  background: color-mix(in srgb, light-dark(#ff3b30, #ff453a) 20%, transparent);
+}
+
+.settings-drawer .input,
+.modal .input {
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px color-mix(in srgb, light-dark(#007aff, #0a84ff) 25%, transparent);
+}
+.input::placeholder {
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+
+/* 分段控件：纯色轨道 + 扁平滑块，无投影 */
+.settings-drawer .segmented {
+  height: 30px; /* 与「数据保存」区的 .btn 等高 */
+  padding: 2px;
+  border-radius: 8px;
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+}
+.settings-drawer .segmented__btn {
+  min-height: 24px;
+  padding: 0 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+
+/* 行数 / 列数使用相同宽度，按钮等分 */
+.settings-drawer .segmented--fixed {
+  display: flex;
+  flex: 0 0 346px;
+  width: 346px;
+}
+.settings-drawer .segmented--fixed .segmented__btn {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-inline: 4px;
+  white-space: nowrap;
+}
+
+/* 标题 + segmented 合成一个带分隔线的完整控件 */
+.settings__row--fused {
+  justify-content: flex-end;
+}
+.settings-fused {
+  display: flex;
+  align-items: center;
+  width: 386px;
+  max-width: 100%;
+  height: 30px;
+  padding: 2px;
+  border-radius: 8px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+.settings-fused__label {
+  flex: 0 0 auto;
+  padding: 0 10px 0 8px;
+  border-right: 1px solid light-dark(rgba(60, 60, 67, 0.14), rgba(235, 235, 245, 0.18));
+  font-size: 13px;
+  line-height: 26px;
+  white-space: nowrap;
+}
+.settings-fused .segmented {
+  flex: 1 1 auto;
+  width: auto;
+  height: 26px;
+  padding: 0;
+  background: transparent;
+}
+.settings-fused .segmented--fixed {
+  flex: 1 1 auto;
+  width: auto;
+  height: 26px;
+}
+.settings-fused .segmented--fixed .segmented__btn {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-inline: 4px;
+  white-space: nowrap;
+}
+
+.segmented__btn[aria-pressed="true"] {
+  background: #fff;
+  color: light-dark(#1c1c1e, #f2f2f7);
+  box-shadow: none;
+}
+html[data-theme="dark"] .segmented__btn[aria-pressed="true"] {
+  background: #636366;
+}
+
+.settings-drawer .icon-btn,
+.settings-drawer .icon-picker__preview {
+  border-radius: 8px;
+}
+.icon-picker__preview {
+  border: 0;
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+}
+.wallpaper-back:hover {
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+}
+.wallpaper-back {
+  border-radius: 8px;
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+
+/* -------------------------- 壁纸磁贴（去投影） ------------------------- */
+.settings-drawer .wallpaper-category-btn,
+.settings-drawer .wallpaper-input {
+  border-radius: 12px;
+  box-shadow: none;
+}
+.settings-drawer .wallpaper-category-btn:hover,
+.settings-drawer .wallpaper-input:hover {
+  filter: brightness(0.92);
+}
+.wallpaper-category-btn[aria-current="true"],
+.wallpaper-input[aria-checked="true"] {
+  box-shadow: inset 0 0 0 3px light-dark(#007aff, #0a84ff);
+}
+.wallpaper-category-btn--upload {
+  border: 1px dashed light-dark(rgba(60, 60, 67, 0.3), rgba(84, 84, 88, 0.55));
+  box-shadow: none;
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.wallpaper-category-btn--upload:hover {
+  filter: none;
+  background-color: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+}
+.wallpaper-cell__remove {
+  box-shadow: none;
+  /* 背景沿用基线实色 #e5e5ea，恒定 100% 不透明（r61）；此处不再覆盖 */
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+
+/* ------------------------------- 菜单 --------------------------------- */
+.menu {
+  padding: 5px;
+  border: 0.5px solid light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+  border-radius: 12px;
+  background: light-dark(#ffffff, rgba(44, 44, 46, 0.94));
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  animation: af-pop 0.16s cubic-bezier(0.32, 0.72, 0, 1);
+}
+@keyframes af-pop {
+  from { opacity: 0; transform: translateY(-3px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.menu__item {
+  min-height: 30px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: light-dark(#1c1c1e, #f2f2f7);
+}
+.menu__item:hover {
+  background: light-dark(rgba(120, 120, 128, 0.12), rgba(118, 118, 128, 0.24));
+}
+.menu__item svg {
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+.menu__item--danger,
+.menu__item--danger svg {
+  color: light-dark(#ff3b30, #ff453a);
+}
+.menu__sep {
+  height: 0.5px;
+  margin: 4px 6px;
+  background: light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+}
+/* ------------------------------ 对话框 -------------------------------- */
+.modal__scrim {
+  background: rgba(0, 0, 0, 0.28);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+html[data-theme="dark"] .modal__scrim {
+  background: rgba(0, 0, 0, 0.44);
+}
+.modal__panel {
+  border: 0.5px solid light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+  border-radius: 14px;
+  background: light-dark(#ffffff, rgba(44, 44, 46, 0.94));
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  animation: af-modal-in 0.24s cubic-bezier(0.32, 0.72, 0, 1);
+}
+@keyframes af-modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.modal__head {
+  padding: 18px 20px 8px;
+}
+.modal__body {
+  padding: 4px 20px 20px;
+}
+.modal__foot {
+  margin: 12px;
+  padding: 12px 0 0;
+  border-block-start: 0.5px solid light-dark(rgba(60, 60, 67, 0.12), rgba(84, 84, 88, 0.55));
+  gap: 8px;
+}
+
+/* ------------------------------- 提示 --------------------------------- */
+.toast {
+  border-radius: 10px;
+  background: rgba(28, 28, 30, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+}
+
+/* ------------------------- 设置抽屉字号与标签颜色（r63） ------------------------- */
+/* 设置菜单整体字号上调约 1–2px，并统一「行标题 / 壁纸分类名」为 #666 */
+.settings-drawer { font-size: 16px; }
+.settings-drawer .settings__heading { font-size: 14px; }
+.settings-drawer .settings__row-title { font-size: 14px; color: #666; }
+.settings-drawer .settings__note { font-size: 13px; }
+.settings-drawer .wallpaper-category-btn__label { font-size: 13px; color: #666; }
+.settings-drawer .wallpaper-list-title { font-size: 14px; }
+.settings-drawer .wallpapers-reset { font-size: 13px; }
+.settings-drawer .btn { font-size: 13px; }
+.settings-drawer .input { font-size: 14px; }
+.settings-drawer .field__label { font-size: 13.5px; }
+.settings-drawer .field__hint { font-size: 12.5px; }
+/* 深色模式下 #666 对比度太低，用同层级的浅灰保证可读；亮色仍精确为 #666 */
+html[data-theme="dark"] .settings-drawer .settings__row-title,
+html[data-theme="dark"] .settings-drawer .wallpaper-category-btn__label {
+  color: #b3b3b3;
+}
+
+/* ------------------- 黑背景 / 壁纸下的图标白边与首帧底色（r64） ------------------- */
+/* 磁贴白底只在「无壁纸的浅色页面」保留；壁纸或深色主题下去掉，
+   否则圆形图标、透明 PNG、字母头像会把白底从圆角/透明区域透出来，
+   在黑色背景上形成一圈白色毛刺。本地 icons/ 图标由 .icon-wrapper 自带白底，不受影响。
+   阴影不丢：从「磁贴方框的 box-shadow」改为图标容器的 drop-shadow，
+   这样壁纸下仍有浮起感，且阴影会贴着图标形状（圆形图标不会出现方形阴影）。 */
+body.has-wallpaper .top-site-outer .tile,
+html[data-theme="dark"] .top-site-outer .tile {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+body.has-wallpaper .top-site-outer .tile .icon-wrapper {
+  /* 有壁纸时保留与无壁纸一致的图标底色，形状由 squircle 蒙版裁切 */
+  background-color: light-dark(#ffffff, #42414d);
+  filter: drop-shadow(0 2px 8px rgba(58, 57, 68, 0.2));
+}
+html[data-theme="dark"] .top-site-outer .tile .icon-wrapper {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* 图标容器精确裁剪到 25% 圆角，避免两层圆角叠加/抗锯齿产生 1px 白色接缝 */
+.top-site-outer .tile .icon-wrapper {
+  overflow: hidden !important;
+  isolation: isolate;
+  transform: translateZ(0);
+  background-clip: padding-box;
+}
+.top-site-outer .tile .icon-wrapper img.top-site-icon {
+  display: block;
+  background: transparent;
+}
+
+/* 数据区操作按钮复用行数/列数的 segmented 外观 */
+.settings-data-actions .segmented__btn:hover {
+  background: light-dark(rgba(120, 120, 128, 0.16), rgba(118, 118, 128, 0.28));
+}
+
+
+/* 数据操作下方：版本号与开源地址 */
+.settings-meta {
+  margin: 10px 4px 0 0;
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.5;
+  color: light-dark(rgba(60, 60, 67, 0.48), rgba(235, 235, 245, 0.48));
+}
+.settings-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+.settings-meta a:hover {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.settings-meta__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  vertical-align: middle;
+}
+.settings-meta__icon {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+}
+.settings-meta__icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* 快捷方式图标来源：Favicon / Simple Icons / 自定义 */
+.icon-mode {
+  display: flex;
+  width: 100%;
+}
+.icon-mode .segmented__btn {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-inline: 4px;
+  white-space: nowrap;
+}
+.icon-mode__hint {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: light-dark(rgba(60, 60, 67, 0.6), rgba(235, 235, 245, 0.6));
+}
+
+
+:root {
+  --apple-squircle: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cpath%20d%3D%27M100.0%2050.0%20L99.976%2064.972%20L99.904%2069.747%20L99.783%2073.205%20L99.613%2076.005%20L99.395%2078.392%20L99.127%2080.486%20L98.81%2082.357%20L98.441%2084.049%20L98.021%2085.593%20L97.549%2087.01%20L97.023%2088.317%20L96.442%2089.524%20L95.804%2090.643%20L95.107%2091.679%20L94.349%2092.639%20L93.528%2093.528%20L92.639%2094.349%20L91.679%2095.107%20L90.643%2095.804%20L89.524%2096.442%20L88.317%2097.023%20L87.01%2097.549%20L85.593%2098.021%20L84.049%2098.441%20L82.357%2098.81%20L80.486%2099.127%20L78.392%2099.395%20L76.005%2099.613%20L73.205%2099.783%20L69.747%2099.904%20L64.972%2099.976%20L50.0%20100.0%20L35.028%2099.976%20L30.253%2099.904%20L26.795%2099.783%20L23.995%2099.613%20L21.608%2099.395%20L19.514%2099.127%20L17.643%2098.81%20L15.951%2098.441%20L14.407%2098.021%20L12.99%2097.549%20L11.683%2097.023%20L10.476%2096.442%20L9.357%2095.804%20L8.321%2095.107%20L7.361%2094.349%20L6.472%2093.528%20L5.651%2092.639%20L4.893%2091.679%20L4.196%2090.643%20L3.558%2089.524%20L2.977%2088.317%20L2.451%2087.01%20L1.979%2085.593%20L1.559%2084.049%20L1.19%2082.357%20L0.873%2080.486%20L0.605%2078.392%20L0.387%2076.005%20L0.217%2073.205%20L0.096%2069.747%20L0.024%2064.972%20L0.0%2050.0%20L0.024%2035.028%20L0.096%2030.253%20L0.217%2026.795%20L0.387%2023.995%20L0.605%2021.608%20L0.873%2019.514%20L1.19%2017.643%20L1.559%2015.951%20L1.979%2014.407%20L2.451%2012.99%20L2.977%2011.683%20L3.558%2010.476%20L4.196%209.357%20L4.893%208.321%20L5.651%207.361%20L6.472%206.472%20L7.361%205.651%20L8.321%204.893%20L9.357%204.196%20L10.476%203.558%20L11.683%202.977%20L12.99%202.451%20L14.407%201.979%20L15.951%201.559%20L17.643%201.19%20L19.514%200.873%20L21.608%200.605%20L23.995%200.387%20L26.795%200.217%20L30.253%200.096%20L35.028%200.024%20L50.0%200.0%20L64.972%200.024%20L69.747%200.096%20L73.205%200.217%20L76.005%200.387%20L78.392%200.605%20L80.486%200.873%20L82.357%201.19%20L84.049%201.559%20L85.593%201.979%20L87.01%202.451%20L88.317%202.977%20L89.524%203.558%20L90.643%204.196%20L91.679%204.893%20L92.639%205.651%20L93.528%206.472%20L94.349%207.361%20L95.107%208.321%20L95.804%209.357%20L96.442%2010.476%20L97.023%2011.683%20L97.549%2012.99%20L98.021%2014.407%20L98.441%2015.951%20L98.81%2017.643%20L99.127%2019.514%20L99.395%2021.608%20L99.613%2023.995%20L99.783%2026.795%20L99.904%2030.253%20L99.976%2035.028%20Z%27%20fill%3D%27black%27%2F%3E%3C%2Fsvg%3E");
+}
+
+/* 所有快捷方式图标统一使用 Apple 连续圆角（超椭圆） */
+.top-site-outer .tile .icon-wrapper {
+  border-radius: 25% !important; /* 不支持 mask 时的回退 */
+  -webkit-mask-image: var(--apple-squircle);
+  mask-image: var(--apple-squircle);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Simple Icons 模式：品牌 SVG 以 60px 居中显示，使用 Apple 连续圆角（超椭圆） */
+.top-site-outer .tile .icon-wrapper.icon-simple img.top-site-icon {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: cover;
+  border-radius: 25% !important; /* 不支持 mask 时的回退 */
+  -webkit-mask-image: var(--apple-squircle);
+  mask-image: var(--apple-squircle);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
+

@@ -1,0 +1,639 @@
+/* 由 tools/gen-local-icons.mjs 自动生成，请勿手改
+   来源：自定义.css（RunningCheese）+ icons/ 本地图标
+   命中本地图标时隐藏远程 favicon，避免两套图标叠在一起 */
+
+/* facebook.com */
+.top-site-button[href*="facebook.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/facebook.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="facebook.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* feedly.com */
+.top-site-button[href*="feedly.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/feedly.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="feedly.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* inoreader.com */
+.top-site-button[href*="inoreader.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/inoreader.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="inoreader.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* innoreader.com */
+.top-site-button[href*="innoreader.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/inoreader.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="innoreader.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* getpocket.com */
+.top-site-button[href*="getpocket.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/pocket.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="getpocket.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* music.163.com */
+.top-site-button[href*="music.163.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/music163.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="music.163.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.youku.com */
+.top-site-button[href*="www.youku.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/youku.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.top-site-button[href*="www.youku.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* instagram.com */
+.top-site-button[href*="instagram.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/instagram.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="instagram.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.weibo.com */
+.top-site-button[href*="www.weibo.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/weibo.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.weibo.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* tophub.today */
+.top-site-button[href*="tophub.today"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/tophub.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="tophub.today"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.douban.com */
+.top-site-button[href*="www.douban.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/douban.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.douban.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.zhihu.com */
+.top-site-button[href*="www.zhihu.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/zhihu.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.zhihu.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* runningcheese.com */
+.top-site-button[href*="runningcheese.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/runningcheese.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="runningcheese.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.twitter.com */
+.top-site-button[href*="www.twitter.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/twitter.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.twitter.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* tieba.baidu.com */
+.top-site-button[href*="tieba.baidu.com"] .icon-wrapper {
+  background-color: #3472F5 !important;
+  background-image: url("../icons/baidu.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 90% 90% !important;
+}
+.top-site-button[href*="tieba.baidu.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* pan.baidu.com */
+.top-site-button[href*="pan.baidu.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/baiduyun.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="pan.baidu.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.bilibili.com */
+.top-site-button[href*="www.bilibili.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/bilibili.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.bilibili.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* wx.qq.com */
+.top-site-button[href*="wx.qq.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/weixin.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="wx.qq.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* mp.weixin.qq.com */
+.top-site-button[href*="mp.weixin.qq.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/weixin.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="mp.weixin.qq.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* weread.qq.com */
+.top-site-button[href*="weread.qq.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/weread-qq.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="weread.qq.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.youtube.com */
+.top-site-button[href*="www.youtube.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/youtube.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.youtube.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* github.com */
+.top-site-button[href*="github.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/github.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="github.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.douyin.com */
+.top-site-button[href*="www.douyin.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/douyin.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.top-site-button[href*="www.douyin.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* hupu.com */
+.top-site-button[href*="hupu.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/hupu.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.top-site-button[href*="hupu.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.xiaohongshu.com */
+.top-site-button[href*="www.xiaohongshu.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/xiaohongshu.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.top-site-button[href*="www.xiaohongshu.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* runningcheese.com/aaa */
+.top-site-button[href*="runningcheese.com/aaa"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/list.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="runningcheese.com/aaa"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* wikipedia.org */
+.top-site-button[href*="wikipedia.org"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/wiki.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="wikipedia.org"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* zsxq.com */
+.top-site-button[href*="zsxq.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/zsxq.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 95% 95% !important;
+}
+.top-site-button[href*="zsxq.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* rawchat.cc */
+.top-site-button[href*="rawchat.cc"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/chatgpt.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="rawchat.cc"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* sharedchat.cn */
+.top-site-button[href*="sharedchat.cn"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/chatgpt.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="sharedchat.cn"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* chatgpt.com */
+.top-site-button[href*="chatgpt.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/chatgpt.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="chatgpt.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* z-lib */
+.top-site-button[href*="z-lib"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/zlib.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="z-lib"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* www.runningcheese.com/zlibrary */
+.top-site-button[href*="www.runningcheese.com/zlibrary"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/zlib.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="www.runningcheese.com/zlibrary"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* 52pojie.cn */
+.top-site-button[href*="52pojie.cn"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/52pojie.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="52pojie.cn"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* mail.qq.com */
+.top-site-button[href*="mail.qq.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/mail.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="mail.qq.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* mail.163.com */
+.top-site-button[href*="mail.163.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/mail.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="mail.163.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* mail.google.com */
+.top-site-button[href*="mail.google.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/mail.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="mail.google.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* outlook.live.com */
+.top-site-button[href*="outlook.live.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/mail.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="outlook.live.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* discord.com */
+.top-site-button[href*="discord.com"] .icon-wrapper {
+  background-color: #586eee !important;
+  background-image: url("../icons/discord.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="discord.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* 127.0.0.1:7860 */
+.top-site-button[href*="127.0.0.1:7860"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/sd.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 90% 90% !important;
+}
+.top-site-button[href*="127.0.0.1:7860"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* tinypng.com */
+.top-site-button[href*="tinypng.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/tinypng.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="tinypng.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* flomoapp.com */
+.top-site-button[href*="flomoapp.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/flomo.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="flomoapp.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* web.okjike.com */
+.top-site-button[href*="web.okjike.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/okjike.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="web.okjike.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* woshipm.com */
+.top-site-button[href*="woshipm.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/woshipm.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 110% 110% !important;
+}
+.top-site-button[href*="woshipm.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* reddit.com */
+.top-site-button[href*="reddit.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/reddit.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="reddit.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* notion.so */
+.top-site-button[href*="notion.so"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/notion.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="notion.so"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* go.itab.link */
+.top-site-button[href*="go.itab.link"] .icon-wrapper {
+  background-color: #1581FF !important;
+  background-image: url("../icons/itab.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="go.itab.link"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* deepseek.com */
+.top-site-button[href*="deepseek.com"] .icon-wrapper {
+  background-color: #1581FF !important;
+  background-image: url("../icons/deepseek.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="deepseek.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* doubao.com */
+.top-site-button[href*="doubao.com"] .icon-wrapper {
+  background-color: #fff !important;
+  background-image: url("../icons/doubao.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="doubao.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* //x.com（扩展补充） */
+.top-site-button[href*="//x.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/twitter.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="//x.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* sspai.com（扩展补充） */
+.top-site-button[href*="sspai.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/sspai.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="sspai.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* taobao.com（扩展补充） */
+.top-site-button[href*="taobao.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/taobao.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="taobao.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}
+
+/* v2ex.com（扩展补充） */
+.top-site-button[href*="v2ex.com"] .icon-wrapper {
+  background-color: #ffffff !important;
+  background-image: url("../icons/v2ex.svg") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.top-site-button[href*="v2ex.com"] .icon-wrapper img.top-site-icon {
+  display: none !important;
+}

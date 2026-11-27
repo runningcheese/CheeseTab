@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="简洁高效的新标签页：快捷方式、常用网站、Firefox 壁纸与自定义图标，数据只保存在本机。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1b22" media="(prefers-color-scheme: dark)">
+<title>新标签页</title>
+<link rel="icon" type="image/svg+xml" href="icons/window-tab.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon32.png">
+<link rel="apple-touch-icon" href="icons/icon128.png">
+<link rel="stylesheet" href="css/newtab.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/local-icons.css">
+<link rel="stylesheet" href="css/apple-flat.css">
+<link rel="icon" type="image/svg+xml" href="icons/window-tab.svg">
+</head>
+<body>
+
+<div class="wallpaper" id="wallpaper" aria-hidden="true"></div>
+
+<div class="outer-wrapper" id="outer">
+  <main class="newtab-main">
+
+    <div class="body-wrapper on">
+      <section class="top-sites" data-section-id="topsites">
+        <ul class="top-sites-list" id="shortcuts"></ul>
+      </section>
+    </div>
+
+  </main>
+
+
+  <menu class="personalizeButtonWrapper">
+    <button class="personalize-button" id="settings-btn" type="button"
+            aria-haspopup="dialog" aria-expanded="false" aria-label="自定义新标签页" title="自定义新标签页" data-i18n-aria="customizeNewTab" data-i18n-title="customizeNewTab">
+      <span id="fab-icon" aria-hidden="true"></span>
+    </button>
+  </menu>
+</div>
+
+<!-- 设置抽屉（从右侧滑入） -->
+<aside class="settings-drawer" id="settings-drawer" role="dialog" aria-modal="true" aria-label="设置" data-i18n-aria="settings" hidden>
+  <header class="settings-drawer__head">
+    <button class="icon-btn" id="settings-close" type="button" aria-label="关闭" data-i18n-aria="close"><span class="js-close-icon"></span></button>
+  </header>
+  <div class="settings" id="settings-body"></div>
+</aside>
+
+<!-- 快捷方式编辑对话框 -->
+<div class="modal" id="shortcut-modal" hidden>
+  <div class="modal__scrim" data-close="1"></div>
+  <div class="modal__panel modal__panel--sm" role="dialog" aria-modal="true" aria-labelledby="shortcut-modal-title">
+    <header class="modal__head">
+      <h2 class="modal__title" id="shortcut-modal-title" data-i18n="addShortcut">添加快捷方式</h2>
+      <button class="icon-btn" id="shortcut-cancel-x" type="button" aria-label="关闭" data-i18n-aria="close"><span class="js-close-icon"></span></button>
+    </header>
+    <form class="modal__body form" id="shortcut-form">
+      <div class="field">
+        <label class="field__label" for="shortcut-name" data-i18n="fieldName">名称</label>
+        <input class="input" id="shortcut-name" type="text" placeholder="例如：GitHub" data-i18n-placeholder="namePlaceholder" required maxlength="60">
+      </div>
+      <div class="field">
+        <label class="field__label" for="shortcut-url" data-i18n="fieldUrl">网址</label>
+        <input class="input" id="shortcut-url" type="text" placeholder="https://example.com" required spellcheck="false">
+        <p class="field__hint" id="shortcut-error" hidden></p>
+      </div>
+      <div class="field">
+        <label class="field__label" data-i18n="fieldIcon">图标（可选）</label>
+        <div class="segmented icon-mode" id="shortcut-icon-mode" role="group">
+          <button class="segmented__btn" type="button" data-icon-mode="favicon" data-i18n="iconModeFavicon">Favicon</button>
+          <button class="segmented__btn" type="button" data-icon-mode="simple" data-i18n="iconModeSimple">Simple Icons</button>
+          <button class="segmented__btn" type="button" data-icon-mode="custom" data-i18n="iconModeCustom">自定义</button>
+        </div>
+        <p class="icon-mode__hint" id="shortcut-icon-mode-hint" hidden></p>
+        <div class="icon-picker" id="shortcut-icon-custom">
+          <input class="input icon-picker__url" id="shortcut-icon-url" type="text" placeholder="https://example.com/icon.png" data-i18n-placeholder="onlineIconPlaceholder" data-i18n-aria="onlineIcon" data-i18n-title="onlineIcon" spellcheck="false">
+          <span class="icon-picker__thumb" id="shortcut-icon-thumb" hidden>
+            <img class="icon-picker__preview" id="shortcut-icon-preview" alt="">
+            <button class="icon-picker__clear" id="shortcut-icon-clear" type="button" aria-label="移除" data-i18n-aria="remove" data-i18n-title="remove">
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.2 2.2 9.8 9.8M9.8 2.2 2.2 9.8"/></svg>
+            </button>
+          </span>
+          <div class="icon-picker__color-group">
+            <button class="icon-picker__color-reset" id="shortcut-icon-bg-reset" type="button" hidden data-i18n="useDefaultColor">默认</button>
+          </div>
+          <button class="btn btn--ghost" id="shortcut-icon-btn" type="button" data-i18n="chooseImage">本地</button>
+          <input id="shortcut-icon-file" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+        </div>
+      </div>
+      <footer class="modal__foot">
+        <button class="btn btn--ghost" id="shortcut-cancel" type="button" data-i18n="cancel">取消</button>
+        <button class="btn btn--primary" id="shortcut-save" type="submit" data-i18n="save">保存</button>
+      </footer>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- 仅 file:// 打开时给出提示；HTTP(S) / 扩展环境下不执行 -->
+<script src="js/file-warning.js"></script>
+<!-- ES Module：必须通过 HTTP(S) 或扩展环境打开；file:// 会被跨域策略拦截。 -->
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

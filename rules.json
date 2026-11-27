@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "User-Agent",
+          "operation": "set",
+          "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:140.0) Gecko/20100101 Firefox/140.0"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||firefox-settings-attachments.cdn.mozilla.net/",
+      "resourceTypes": ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "other"]
+    }
+  }
+]

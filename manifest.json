@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "__MSG_extName__",
+  "version": "1.5",
+  "description": "__MSG_extDesc__",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "topSites",
+    "favicon",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://api.xinac.net/*",
+    "https://favicon.cccyun.cc/*",
+    "https://firefox-settings-attachments.cdn.mozilla.net/*",
+    "https://bing.xinac.net/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "cdn_ua_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "minimum_chrome_version": "111"
+}

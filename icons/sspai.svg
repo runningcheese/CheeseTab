@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg t="1642254632141" class="icon" viewBox="0 0 1024 1024" version="1.1" p-id="27078" width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:guide x="125.874" y="631.598" angle="0"/>
+    <bx:guide x="897.116" y="607.633" angle="0"/>
+    <bx:guide x="363.346" y="126.152" angle="90"/>
+    <bx:guide x="563.782" y="901.751" angle="90"/>
+  </defs>
+  <title>斗鱼</title>
+  <script/>
+  <script/>
+  <g id="#f2f2f2ff" transform="matrix(1, 0, 0, 1, 1308.295047, 17.148252)"/>
+  <script/>
+  <title>Wikipedia logo</title>
+  <desc>For more information see: http://commons.wikimedia.org/wiki/File:Wikipedia_svg_logo.svg</desc>
+  <title>bing-logo</title>
+  <title>Feedly icon</title>
+  <g opacity="1" transform="matrix(32, 0, 0, 32, 0, 0)" style="">
+    <path id="矩形 1" fill-rule="evenodd" opacity="1" d="M0,32L32,32L32,0L0,0L0,32Z " transform="translate(0 0)  rotate(0 16 15.999999999999998)" style="fill: rgb(207, 61, 51);"/>
+    <path id="路径 2" fill-rule="evenodd" style="fill: rgb(255, 255, 255);" opacity="1" d="M 13.306 22.513 C 13.316 20.623 13.306 18.733 13.306 16.833 L 13.306 12.373 C 14.736 12.133 16.055 11.913 17.546 11.673 C 17.546 13.323 17.656 14.823 17.526 16.313 C 17.296 19.003 17.916 21.403 19.366 23.683 C 19.906 24.523 20.385 24.963 21.416 24.893 C 22.866 24.803 23.036 24.573 22.396 23.273 C 21.745 21.953 20.745 20.663 20.586 19.283 C 20.306 16.633 20.506 13.923 20.506 11.193 C 21.376 11.043 22.156 10.893 22.956 10.763 C 24.076 10.563 24.556 9.843 24.316 8.523 C 24.106 7.353 23.216 7.783 22.546 7.893 C 17.745 8.683 12.946 9.503 8.156 10.293 C 6.616 10.553 6.426 10.763 6.376 12.323 C 6.346 13.083 6.686 13.453 7.456 13.343 C 8.386 13.213 9.316 13.063 10.396 12.883 L 10.396 23.543 C 10.396 24.213 10.456 24.893 11.376 24.783 C 12.345 24.673 13.296 23.513 13.306 22.513 Z"/>
+  </g>
+</svg>

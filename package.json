@@ -1,0 +1,14 @@
+{
+  "name": "cheesetab",
+  "version": "1.5.0",
+  "private": true,
+  "description": "Firefox 风格新标签页，同时支持浏览器扩展与静态网站部署",
+  "type": "module",
+  "scripts": {
+    "build:web": "node tools/build-web.mjs",
+    "preview": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
